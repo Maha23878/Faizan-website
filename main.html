@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faizan Pick, Drop, Travel & Tour Service</title>
+  <meta name="description" content="Faizan Pick, Drop, Travel & Tour Service - PWD Housing Society, Islamabad. Call: 0300-8369516" />
+  <style>
+    :root{
+      --accent:#0b6cf3;
+      --accent-dark:#0553b8;
+      --muted:#666;
+      --card:#ffffff;
+      --bg:#f5f7fb;
+      --radius:12px;
+      font-family: "Segoe UI", Roboto, "Noto Sans", system-ui, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111;line-height:1.45}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:980px;margin:18px auto;padding:16px}
+    header{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:72px;height:72px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(11,108,243,0.18)
+    }
+    h1{margin:0;font-size:20px}
+    .sub{color:var(--muted);font-size:13px}
+    .hero{
+      margin-top:14px;border-radius:16px;padding:18px;background:
+      linear-gradient(180deg, rgba(11,108,243,0.07), rgba(11,108,243,0.02));
+      display:flex;gap:16px;align-items:center;flex-wrap:wrap;
+    }
+    .hero-left{flex:1;min-width:220px}
+    .hero-right{width:220px;min-width:180px;border-radius:12px;overflow:hidden}
+    .cta-group{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border-radius:10px;
+      background:var(--accent);color:#fff;font-weight:600;box-shadow:0 6px 18px rgba(11,108,243,0.18)
+    }
+    .btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(11,108,243,0.12);box-shadow:none}
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 20px rgba(19,19,19,0.04)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    @media(max-width:880px){.grid{grid-template-columns:repeat(1,1fr)} .hero-right{width:100%}}
+    .service{display:flex;gap:12px;align-items:flex-start}
+    .service img{width:84px;height:64px;object-fit:cover;border-radius:8px}
+    .lang-switch{display:flex;gap:6px}
+    .pill{padding:6px 10px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,0.06);font-size:13px;cursor:pointer}
+    .vehicles{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .vehicle{flex:1;min-width:160px;border-radius:10px;overflow:hidden;background:#fff}
+    .vehicle img{width:100%;height:120px;object-fit:cover;display:block}
+    .vehicle .vinfo{padding:8px}
+    form{display:grid;gap:10px}
+    input,select,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:15px}
+    .row{display:flex;gap:8px}
+    .row > *{flex:1}
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px;padding:16px}
+    .whatsapp{background:#25D366;color:white;padding:8px 12px;border-radius:10px;font-weight:700}
+    .badge{display:inline-block;padding:6px 8px;border-radius:8px;background:rgba(11,108,243,0.12);font-weight:700;color:var(--accent);font-size:13px}
+    .tour-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .tour{background:#fff;padding:8px;border-radius:10px;min-width:140px;box-shadow:0 6px 20px rgba(0,0,0,0.03)}
+    .muted{color:var(--muted);font-size:14px}
+    .center{display:flex;align-items:center;justify-content:center}
+    /* review section */
+    .reviews{margin-top:24px}
+    .review-card{background:#fff;padding:12px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.05);margin-bottom:10px}
+    .review-card strong{display:block;margin-bottom:4px}
+    #addReview{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+    #addReview input,#addReview textarea,#addReview button{width:100%}
+    #addReview button{background:var(--accent);color:white;border:none;padding:8px;border-radius:8px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">FP</div>
+        <div>
+          <h1 id="title">Faizan Pick, Drop, Travel & Tour Service</h1>
+          <div class="sub">PWD Housing Society, Islamabad • <strong>Call: 0300-8369516</strong></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <div class="lang-switch card">
+          <span class="pill" onclick="setLang('en')">English</span>
+          <span class="pill" onclick="setLang('ur')">اردو</span>
+        </div>
+        <a href="tel:+923008369516" class="pill">Call Now</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero card" aria-labelledby="title">
+      <div class="hero-left">
+        <h2 id="hero-heading">Reliable Pick & Drop • Travel • Tours</h2>
+        <p id="hero-text" class="muted">School & Office pick/drop, city travel and beautiful northern tours — safe, on-time, and affordable. Book now or call for details.</p>
+        <div class="cta-group">
+          <a class="btn" href="tel:+923008369516">📞 Call: 0300-8369516</a>
+          <a class="btn" href="https://wa.me/923008369516?text=Assalamualaikum%20Faizan%20bhai%2C%20I%20want%20to%20book%20a%20ride." target="_blank">💬 WhatsApp</a>
+          <button class="btn ghost" onclick="scrollToForm()">📥 Book Your Ride</button>
+        </div>
+        <div style="margin-top:12px" class="muted" id="services-intro">
+          <span class="badge">Pick & Drop</span> &nbsp; <span class="badge">City Travel</span> &nbsp; <span class="badge">Outstation Tours</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1fae3b6ec5a5ad2f5a7d4a6a4f2e5f6a" alt="Travel Hero" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section style="margin-top:14px">
+      <div class="card">
+        <h3 id="services-heading">Services • خدمات</h3>
+        <div class="grid" role="list">
+          <div class="service">
+            <img src="bolan.jpg" alt="Pick and Drop">
+            <div>
+              <strong id="s1-title">Pick & Drop</strong>
+              <div class="muted" id="s1-text">School & Office pick/drop — reliable drivers and safe rides.</div>
+            </div>
+          </div>
+          <div class="service">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b8c4f6e7a1e2f3d4a5b6c7d8e9f0a1b" alt="City Travel">
+            <div>
+              <strong id="s2-title">City Travel</strong>
+              <div class="muted" id="s2-text">Daily city trips — safe and affordable for passengers.</div>
+            </div>
+          </div>
+          <div class="service">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e" alt="Tours">
+            <div>
+              <strong id="s3-title">Travel & Tours</strong>
+              <div class="muted" id="s3-text">Outstation tours: Swat, Kalam, Naran, Hunza, Skardu and more.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VEHICLES -->
+    <section style="margin-top:14px">
+      <div class="card">
+        <h3>Available Vehicles • گاڑیاں</h3>
+        <div class="vehicles">
+          <div class="vehicle">
+            <img src="bolan.jpg" alt="Suzuki Bolan">
+            <div class="vinfo">
+              <strong>Suzuki Bolan</strong>
+              <div class="muted">Best for short routes & small groups.</div>
+            </div>
+          </div>
+          <div class="vehicle">
+            <img src="hiace.jpg" alt="Toyota Hiace">
+            <div class="vinfo">
+              <strong>Toyota Hiace</strong>
+              <div class="muted">Comfortable for city & short outstation trips.</div>
+            </div>
+          </div>
+          <div class="vehicle">
+            <img src="coaster.jpg" alt="Coaster">
+            <div class="vinfo">
+              <strong>Coaster</strong>
+              <div class="muted">Large groups & long tours.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOURS -->
+    <section style="margin-top:14px">
+      <div class="card">
+        <h3>Explore Northern Pakistan • زیارات شمالی علاقہ جات</h3>
+        <p class="muted">Popular tour packages — ask for custom plans and prices.</p>
+        <div class="tour-list">
+          <div class="tour"><strong>Swat</strong><div class="muted">Lush valleys & rivers</div></div>
+          <div class="tour"><strong>Kalam</strong><div class="muted">Cool weather & beautiful lakes</div></div>
+          <div class="tour"><strong>Naran & Kaghan</strong><div class="muted">High mountains & lakes</div></div>
+          <div class="tour"><strong>Hunza & Skardu</strong><div class="muted">Majestic mountain scenery</div></div>
+          <div class="tour"><strong>Murree & Nathia Gali</strong><div class="muted">Family-friendly hill stations</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section id="booking" style="margin-top:14px">
+      <div class="card">
+        <h3 id="book-heading">Book Your Ride • اپنی بکنگ کریں</h3>
+        <form id="bookingForm" onsubmit="submitForm(event)">
+          <div class="row">
+            <input type="text" id="name" placeholder="Full name • نام" required />
+            <input type="tel" id="phone" placeholder="Phone number • فون نمبر (03XX-XXXXXXX)" required />
+          </div>
+          <div class="row">
+            <input type="text" id="pickup" placeholder="Pickup location • پک اپ مقام" required />
+            <input type="text" id="drop" placeholder="Drop location • ڈراپ مقام" required />
+          </div>
+          <div class="row">
+            <select id="serviceType" required>
+              <option value="">Select service • سروس منتخب کریں</option>
+              <option value="pickdrop">Pick & Drop (School/Office)</option>
+              <option value="city">City Travel</option>
+              <option value="tour">Outstation Tour</option>
+            </select>
+            <select id="vehicle">
+              <option value="">Select vehicle • گاڑی منتخب کریں (اختیاری)</option>
+              <option value="bolan">Suzuki Bolan</option>
+              <option value="hiace">Toyota Hiace</option>
+              <option value="coaster">Coaster</option>
+            </select>
+          </div>
+          <textarea id="notes" placeholder="Additional notes • مزید تفصیلات (optional)"></textarea>
+
+          <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+            <button class="btn" type="submit">📥 Send Booking</button>
+            <a class="btn" href="https://wa.me/923008369516?text=Hi%20Faizan%20bhai%2C%20I%20want%20to%20book%20a%20ride." target="_blank">💬 Book on WhatsApp</a>
+            <a class="pill" href="tel:+923008369516">📞 Call Now</a>
+          </div>
+
+          <p id="formMsg" class="muted" style="margin-top:8px"></p>
+        </form>
+        <div style="margin-top:10px;color:var(--muted);font-size:13px">Note: This form sends booking details to your phone via WhatsApp link or can be connected to email/back-end later.</div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews card">
+      <h3>Customer Reviews • گاہک کی رائے</h3>
+      <div id="reviewList">
+        <div class="review-card"><strong>Amna:</strong> Excellent service! On time and safe.</div>
+        <div class="review-card"><strong>Ahmed:</strong> Very comfortable ride, friendly driver.</div>
+        <div class="review-card"><strong>Radaf:</strong> Affordable and reliable.</div>
+      </div>
+      <div id="addReview">
+        <input type="text" id="reviewerName" placeholder="Your Name" />
+        <textarea id="reviewText" placeholder="Write your review"></textarea>
+        <button onclick="addReview()">Add Review</button>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Faizan Pick, Drop, Travel & Tour Service — PWD Housing Society, Islamabad • <a href="tel:+923008369516">0300-8369516</a>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const texts = {
+      en:{
+        title: "Faizan Pick, Drop, Travel & Tour Service",
+        heroHeading: "Reliable Pick & Drop • Travel • Tours",
+        heroText: "School & Office pick/drop, city travel and beautiful northern tours — safe, on-time, and affordable. Book now or call for details.",
+        servicesHeading: "Services • خدمات",
+        s1Title: "Pick & Drop",
+        s1Text: "School & Office pick/drop — reliable drivers and safe rides.",
+        s2Title: "City Travel",
+        s2Text: "Daily city trips — safe and affordable for passengers.",
+        s3Title: "Travel & Tours",
+        s3Text: "Outstation tours: Swat, Kalam, Naran, Hunza, Skardu and more.",
+        bookHeading: "Book Your Ride • اپنی بکنگ کریں",
+      },
+      ur:{
+        title: "فیضان پک، ڈراپ، ٹریول اینڈ ٹور سروس",
+        heroHeading: "قابلِ اعتماد پک اینڈ ڈراپ • ٹریول • ٹورز",
+        heroText: "اسکول اور آفس کے لئے پک اینڈ ڈراپ، سٹی ٹریول اور شمالی علاقوں کے خوبصورت ٹورز۔ محفوظ، وقت پر، اور سستی۔ ابھی بک کریں یا تفصیلات کے لیے کال کریں۔",
+        servicesHeading: "سروسز • خدمات",
+        s1Title: "پک اینڈ ڈراپ",
+        s1Text: "اسکول اور آفس کے لیے محفوظ اور قابل اعتماد سروس۔",
+        s2Title: "سٹی ٹریول",
+        s2Text: "روزانہ کے شہر کے سفر — محفوظ اور سستی۔",
+        s3Title: "ٹریول اینڈ ٹورز",
+        s3Text: "آؤٹ اسٹیشن ٹورز: سوات، کالام، ناران، ہنزہ، سکردو اور مزید۔",
+        bookHeading: "اپنی بکنگ کریں",
+      }
+    }
+
+    function setLang(lang){
+      const t = texts[lang]
+      document.getElementById('title').textContent = t.title
+      document.getElementById('hero-heading').textContent = t.heroHeading
+      document.getElementById('hero-text').textContent = t.heroText
+      document.getElementById('services-heading').textContent = t.servicesHeading
+      document.getElementById('s1-title').textContent = t.s1Title
+      document.getElementById('s1-text').textContent = t.s1Text
+      document.getElementById('s2-title').textContent = t.s2Title
+      document.getElementById('s2-text').textContent = t.s2Text
+      document.getElementById('s3-title').textContent = t.s3Title
+      document.getElementById('s3-text').textContent = t.s3Text
+      document.getElementById('book-heading').textContent = t.bookHeading
+    }
+
+    function scrollToForm(){
+      document.getElementById('booking').scrollIntoView({behavior:'smooth'})
+    }
+
+    function submitForm(e){
+      e.preventDefault()
+      const name = document.getElementById('name').value
+      const phone = document.getElementById('phone').value
+      const pickup = document.getElementById('pickup').value
+      const drop = document.getElementById('drop').value
+      const serviceType = document.getElementById('serviceType').value
+      const vehicle = document.getElementById('vehicle').value
+      const notes = document.getElementById('notes').value
+
+      // for now just alert (later connect backend/WhatsApp)
+      alert(`Booking:\nName: ${name}\nPhone: ${phone}\nPickup: ${pickup}\nDrop: ${drop}\nService: ${serviceType}\nVehicle: ${vehicle}\nNotes: ${notes}`)
+      document.getElementById('bookingForm').reset()
+    }
+
+    function addReview(){
+      const name = document.getElementById('reviewerName').value.trim()
+      const text = document.getElementById('reviewText').value.trim()
+      if(name && text){
+        const div = document.createElement('div')
+        div.className = 'review-card'
+        div.innerHTML = `<strong>${name}:</strong> ${text}`
+        document.getElementById('reviewList').appendChild(div)
+        document.getElementById('reviewerName').value = ''
+        document.getElementById('reviewText').value = ''
+      } else{
+        alert('Please enter your name and review.')
+      }
+    }
+  </script>
+</body>
+</html>
